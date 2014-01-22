@@ -16,5 +16,6 @@
 
 - (IBAction) segmentedControlChange:(id)sender;
 
+- (IBAction) openWebClicked:(id)sender;
 
 @end

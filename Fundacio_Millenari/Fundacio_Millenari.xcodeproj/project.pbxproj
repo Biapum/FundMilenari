@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD26DBDA1887217F001B5F6D /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26DBD81887217F001B5F6D /* WebViewController.m */; };
+		CD26DBDB1887217F001B5F6D /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD26DBD91887217F001B5F6D /* WebViewController.xib */; };
 		CDC2F6E81858C5B500F25462 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC2F6E71858C5B500F25462 /* Foundation.framework */; };
 		CDC2F6EA1858C5B500F25462 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC2F6E91858C5B500F25462 /* CoreGraphics.framework */; };
 		CDC2F6EC1858C5B500F25462 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC2F6EB1858C5B500F25462 /* UIKit.framework */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD26DBD71887217F001B5F6D /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		CD26DBD81887217F001B5F6D /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		CD26DBD91887217F001B5F6D /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		CDC2F6E41858C5B500F25462 /* Fundacio_Millenari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fundacio_Millenari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC2F6E71858C5B500F25462 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDC2F6E91858C5B500F25462 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +124,9 @@
 				CDC2F7161858C5D400F25462 /* MainViewController.h */,
 				CDC2F7171858C5D400F25462 /* MainViewController.m */,
 				CDC2F7191858C64200F25462 /* MainViewController.xib */,
+				CD26DBD71887217F001B5F6D /* WebViewController.h */,
+				CD26DBD81887217F001B5F6D /* WebViewController.m */,
+				CD26DBD91887217F001B5F6D /* WebViewController.xib */,
 			);
 			path = Fundacio_Millenari;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 				CDC2F6F21858C5B500F25462 /* InfoPlist.strings in Resources */,
 				CDC2F71A1858C64200F25462 /* MainViewController.xib in Resources */,
 				CDC2F6FA1858C5B500F25462 /* Images.xcassets in Resources */,
+				CD26DBDB1887217F001B5F6D /* WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +260,7 @@
 				CDC2F6F81858C5B500F25462 /* AppDelegate.m in Sources */,
 				CDC2F7181858C5D400F25462 /* MainViewController.m in Sources */,
 				CDC2F6F41858C5B500F25462 /* main.m in Sources */,
+				CD26DBDA1887217F001B5F6D /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +461,7 @@
 				CDC2F7121858C5B600F25462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDC2F7131858C5B600F25462 /* Build configuration list for PBXNativeTarget "Fundacio_MillenariTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +470,7 @@
 				CDC2F7151858C5B600F25462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

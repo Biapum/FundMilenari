@@ -13,6 +13,7 @@
  */
 
 #import "MainViewController.h"
+#import "WebViewController.h"
 
 @interface MainViewController ()
 @property (nonatomic, strong) IBOutlet UITextField *textFieldNum1;
@@ -110,9 +111,24 @@
 }
 
 
+//Accio del boto obrir web
+- (IBAction) openWebClicked:(id)sender
+{
+    //Xivato
+    NSLog(@"openWebClicked--------------");
+ 
+    //Creem la nova pantalla a memoria
+    WebViewController *nomNovaPantallaInventat1 = [[WebViewController alloc] init];
 
+    //Creem la nova pantalla a memoria i li passem la URL que volem obrir.
+    WebViewController *nomNovaPantallaInventat2 = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil webUrl:@"http://www.sport.es"];
+    
+    //canviem el tipus de animacio
+    [nomNovaPantallaInventat2 setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
 
-
+    //Obrim la pantalla nova.
+    [self presentViewController:nomNovaPantallaInventat2 animated:YES completion:nil];
+}
 
 
 

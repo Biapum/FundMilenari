@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewController">
             <connections>
+                <outlet property="indicatorProgress" destination="ogZ-Se-UoK" id="7pJ-vs-ngm"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="webViewDemo" destination="qtm-iS-b3l" id="QvT-d0-vxE"/>
             </connections>
@@ -30,7 +31,31 @@
                     <rect key="frame" x="0.0" y="58" width="320" height="465"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Mx9-vY-OOM"/>
+                    </connections>
                 </webView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ogZ-Se-UoK">
+                    <rect key="frame" x="252" y="18" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="color" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GDG-NE-nNH">
+                    <rect key="frame" x="0.0" y="523" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="&lt;" id="rXj-qp-40V">
+                            <connections>
+                                <action selector="goWebBack:" destination="-1" id="DJb-jK-KhU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title=">" id="Cnu-9U-dOi">
+                            <connections>
+                                <action selector="goWebForward:" destination="-1" id="qcX-4I-Nhv"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

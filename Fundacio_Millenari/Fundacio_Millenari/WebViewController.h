@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController
+@interface WebViewController : UIViewController <UIWebViewDelegate>
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil webUrl:(NSString*)webUrl_;
 
 
 - (IBAction) close:(id)sender;
+
+- (IBAction) goWebBack:(id)sender;
+- (IBAction) goWebForward:(id)sender;
 
 @end

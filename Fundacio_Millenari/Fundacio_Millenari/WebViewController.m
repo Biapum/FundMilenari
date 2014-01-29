@@ -11,6 +11,7 @@
 @interface WebViewController ()
 @property (nonatomic, strong) IBOutlet UIWebView            *webViewDemo;
 @property (nonatomic, strong) NSString  *nomDeLaWeb;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *indicatorProgress;
 @end
 
 @implementation WebViewController
@@ -41,6 +42,63 @@
     //Tanca la pantalla
     [self dismissViewControllerAnimated:NO completion:nil];
 }
+
+
+- (IBAction) goWebBack:(id)sender
+{
+    [self.webViewDemo goBack];
+}
+
+- (IBAction) goWebForward:(id)sender
+{
+    [self.webViewDemo goForward];
+}
+
+
+
+
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    
+    NSLog(@"Estic començant");
+    
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    NSLog(@"ja he començant");
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+
+    [self.indicatorProgress setHidden:YES];
+    
+    NSLog(@"ja he acabat");
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    NSLog(@"Hi ha hagut un error");
+    
+    //Mostrem error amb una alert.
+    UIAlertView *alertWebError = [[UIAlertView alloc] initWithTitle:@"Error!!!" message:@"No tens internet!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Close",nil]; //Afegim els botons que volem
+    
+    [alertWebError show];
+}
+
+//Delegate per saber quin buto ha clicat
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex==1)
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+
 
 
 @end

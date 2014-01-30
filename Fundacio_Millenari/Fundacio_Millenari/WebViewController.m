@@ -7,11 +7,14 @@
 //
 
 #import "WebViewController.h"
+#import "ListFilmViewController.h"
 
 @interface WebViewController ()
+
 @property (nonatomic, strong) IBOutlet UIWebView            *webViewDemo;
 @property (nonatomic, strong) NSString  *nomDeLaWeb;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView *indicatorProgress;
+
 @end
 
 @implementation WebViewController
@@ -34,6 +37,8 @@
     // Do any additional setup after loading the view from its nib.
     
     [self.webViewDemo loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:self.nomDeLaWeb]]];
+    
+    self.title = self.nomDeLaWeb;
 }
 
 //Acció de tancar la pantalla
@@ -44,6 +49,9 @@
 }
 
 
+/**********
+ ACTIONS
+**********/
 - (IBAction) goWebBack:(id)sender
 {
     [self.webViewDemo goBack];
@@ -54,10 +62,33 @@
     [self.webViewDemo goForward];
 }
 
+- (IBAction) refreshMyWebClicked:(id)sender
+{
+    [self.webViewDemo reload];
+}
+
+- (IBAction) startClicked:(id)sender
+{
+    [self.webViewDemo loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:self.nomDeLaWeb]]];
+}
+
+- (IBAction) filmListButtonClicked:(id)sender
+{
+    NSLog(@"OBRIR PANTALLA PELIS");
+    
+    ListFilmViewController *vc = [[ListFilmViewController alloc] init];
+    
+    //Si volguessim obrir una modal
+    //[self presentViewController:vc animated:YES completion:nil];
+    
+    //Volem navegar a la dreta
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
-
-
+/*****************
+ WEBVIEWDELEGATES
+ ****************/
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     

@@ -23,6 +23,8 @@
 		CDC2F70D1858C5B600F25462 /* Fundacio_MillenariTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC2F70C1858C5B600F25462 /* Fundacio_MillenariTests.m */; };
 		CDC2F7181858C5D400F25462 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC2F7171858C5D400F25462 /* MainViewController.m */; };
 		CDC2F71A1858C64200F25462 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC2F7191858C64200F25462 /* MainViewController.xib */; };
+		CDE9449318999AA200F83340 /* ListFilmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE9449118999AA200F83340 /* ListFilmViewController.m */; };
+		CDE9449418999AA200F83340 /* ListFilmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE9449218999AA200F83340 /* ListFilmViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,11 @@
 		CDC2F7161858C5D400F25462 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CDC2F7171858C5D400F25462 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CDC2F7191858C64200F25462 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		CDE9449018999AA200F83340 /* ListFilmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFilmViewController.h; sourceTree = "<group>"; };
+		CDE9449118999AA200F83340 /* ListFilmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFilmViewController.m; sourceTree = "<group>"; };
+		CDE9449218999AA200F83340 /* ListFilmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListFilmViewController.xib; sourceTree = "<group>"; };
+		CDE944951899A1B000F83340 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CDE944961899A1B000F83340 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +134,9 @@
 				CD26DBD71887217F001B5F6D /* WebViewController.h */,
 				CD26DBD81887217F001B5F6D /* WebViewController.m */,
 				CD26DBD91887217F001B5F6D /* WebViewController.xib */,
+				CDE9449018999AA200F83340 /* ListFilmViewController.h */,
+				CDE9449118999AA200F83340 /* ListFilmViewController.m */,
+				CDE9449218999AA200F83340 /* ListFilmViewController.xib */,
 			);
 			path = Fundacio_Millenari;
 			sourceTree = "<group>";
@@ -218,6 +228,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ca,
 			);
 			mainGroup = CDC2F6DB1858C5B500F25462;
 			productRefGroup = CDC2F6E51858C5B500F25462 /* Products */;
@@ -236,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC2F6F21858C5B500F25462 /* InfoPlist.strings in Resources */,
+				CDE9449418999AA200F83340 /* ListFilmViewController.xib in Resources */,
 				CDC2F71A1858C64200F25462 /* MainViewController.xib in Resources */,
 				CDC2F6FA1858C5B500F25462 /* Images.xcassets in Resources */,
 				CD26DBDB1887217F001B5F6D /* WebViewController.xib in Resources */,
@@ -259,6 +271,7 @@
 			files = (
 				CDC2F6F81858C5B500F25462 /* AppDelegate.m in Sources */,
 				CDC2F7181858C5D400F25462 /* MainViewController.m in Sources */,
+				CDE9449318999AA200F83340 /* ListFilmViewController.m in Sources */,
 				CDC2F6F41858C5B500F25462 /* main.m in Sources */,
 				CD26DBDA1887217F001B5F6D /* WebViewController.m in Sources */,
 			);
@@ -287,6 +300,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CDC2F6F11858C5B500F25462 /* en */,
+				CDE944951899A1B000F83340 /* ca */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -295,6 +309,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CDC2F70A1858C5B600F25462 /* en */,
+				CDE944961899A1B000F83340 /* ca */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

@@ -120,14 +120,19 @@
     //Creem la nova pantalla a memoria
     WebViewController *nomNovaPantallaInventat1 = [[WebViewController alloc] init];
 
+
+    
     //Creem la nova pantalla a memoria i li passem la URL que volem obrir.
-    WebViewController *nomNovaPantallaInventat2 = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil webUrl:@"http://www.sport.es"];
+    WebViewController *nomNovaPantallaInventat2 = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil webUrl:@"http://www.google.com"];
     
     //canviem el tipus de animacio
     [nomNovaPantallaInventat2 setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
 
+    //Creem el navigation amb la pantalla creada com la inicial.
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:nomNovaPantallaInventat2];
+    
     //Obrim la pantalla nova.
-    [self presentViewController:nomNovaPantallaInventat2 animated:YES completion:nil];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 

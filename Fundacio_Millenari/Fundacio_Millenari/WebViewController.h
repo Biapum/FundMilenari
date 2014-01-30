@@ -18,4 +18,9 @@
 - (IBAction) goWebBack:(id)sender;
 - (IBAction) goWebForward:(id)sender;
 
+- (IBAction) refreshMyWebClicked:(id)sender;
+- (IBAction) startClicked:(id)sender;
+
+- (IBAction) filmListButtonClicked:(id)sender;
+
 @end

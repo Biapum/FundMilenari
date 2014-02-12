@@ -72,6 +72,7 @@
     [self.webViewDemo loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:self.nomDeLaWeb]]];
 }
 
+
 - (IBAction) filmListButtonClicked:(id)sender
 {
     NSLog(@"OBRIR PANTALLA PELIS");
@@ -96,6 +97,9 @@
     
     return YES;
 }
+
+
+
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {

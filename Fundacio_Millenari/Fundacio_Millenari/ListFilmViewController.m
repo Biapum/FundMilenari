@@ -8,8 +8,11 @@
 
 #import "ListFilmViewController.h"
 
+#import "ListFilmOfTypeViewController.h"
+
 @interface ListFilmViewController ()
-@property (nonatomic, strong) IBOutlet UITableView *tableViewFilms;
+@property (nonatomic, strong) IBOutlet UITableView  *tableViewFilms;
+@property (nonatomic, strong) NSMutableArray        *arrayFilms;
 @end
 
 @implementation ListFilmViewController
@@ -23,6 +26,7 @@
     return self;
 }
 
+//Metode que s'executa al carregar la pantalla
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,9 +35,11 @@
     self.title = @"Pelis";
 
     [[self.navigationController navigationBar] setTintColor:[UIColor greenColor]];
-    [self.navigationController.navigationBar setTintColor:[UIColor greenColor]];
+    [self.navigationController.navigationBar setTintColor:[UIColor greenColor]];//idem linia anterior
     
-    [self.navigationController.navigationItem.backBarButtonItem setTitle:@"adeuuu"];
+    self.arrayFilms = [[NSMutableArray alloc] initWithObjects:@"Acció", @"Terror",@"Animació",@"Dibuixos",@"Comedia",nil];
+
+    NSLog(@"Pintem l'array de pel·licules: %@", self.arrayFilms);
 }
 
 
@@ -45,10 +51,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
-    return 3;
+    return [self.arrayFilms count];
 }
 
-//COM HA DE SER CADA CEL·LA
+//COM HA DE SER CADA CEL·LA. s'executa per cada cel·la.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
@@ -59,23 +65,38 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    if (indexPath.row == 0)
-    {
-        cell.textLabel.text = @"Acció";
-        cell.detailTextLabel.text = @"Pelis d'acció";
-    }
-    else if (indexPath.row ==1)
-    {
-        cell.textLabel.text = @"Terror";
-        cell.detailTextLabel.text = @"Pelis de terror";
-    }
-    else if (indexPath.row ==2)
-    {
-        cell.textLabel.text = @"Drama";
-        cell.detailTextLabel.text = @"Pelis de nenes";
-    }
+    NSString *stringFilmName = [self.arrayFilms objectAtIndex:indexPath.row];
+    cell.textLabel.text = stringFilmName;
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    
+
+    
+//    if (indexPath.row == 1)
+//    {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
+    
     return cell;
 }
+
+// Called after the user changes the selection.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"la fila seleccionada es: %li",(long)indexPath.row);
+
+    //Recuparem el nom de la peli de la fila seleccionada
+    NSString *stringFilmName = [self.arrayFilms objectAtIndex:indexPath.row];
+
+    
+    //Creem la pantalla a memoria
+    ListFilmOfTypeViewController *novaPantalla = [[ListFilmOfTypeViewController alloc] initWithNibName:@"ListFilmOfTypeViewController" bundle:nil filmType:stringFilmName];
+    
+    //Navaguem a la dreta
+    [self.navigationController pushViewController:novaPantalla animated:YES];
+}
+
 
 
 
